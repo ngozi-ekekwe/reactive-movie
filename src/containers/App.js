@@ -1,19 +1,14 @@
-import React, { Component, PropTypes } from "react";
+import React, {Fragment} from "react";
 import Header from "../common/Header";
 import Footer from "../common/Footer";
 import Main from "../components/Main";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
+export default function App() {
+  return (
+      <Fragment>
         <Header />
         <Main />
-      </div>
-    );
-  }
+        <Footer />
+      </Fragment>
+  )
 }
