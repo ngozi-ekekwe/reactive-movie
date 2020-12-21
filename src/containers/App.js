@@ -1,7 +1,7 @@
 import React, {Fragment} from "react";
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Main from "../components/Main";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Main from "./Main";
 
 export default function App() {
   return (

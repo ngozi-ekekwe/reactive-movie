@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Movie from "../containers/Movies";
-import MovieDetails from "../containers/MovieDetails";
-import TVSeries from "../containers/TVSeries";
+import Home from "../pages/Home";
+import Movie from "../pages/Movies";
+import MovieDetails from "../pages/Movie";
+import TVSeries from "../pages/Series";
 
 const Main = () => {
   return (
