@@ -6,6 +6,8 @@
 }
 
 @import './home';
+@import './header';
+@import './login';
 
 
 body {
@@ -17,53 +19,58 @@ body {
   color: #dcdcdc;
 }
 
-header {
-  font-weight: bold;
-  font-size: 2.5rem;
-  background: linear-gradient(#060606, #141414);
-  background-color: transparent;
-  padding: 0% 2%;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  z-index: 2;
-  width: 100%;  
+
+.main {
+  // position: absolute;
 }
 
-nav {
-  display: flex;
-  padding: 1.5rem ;
-  justify-content: center;
+// header {
+//   font-weight: bold;
+//   font-size: 2.5rem;
+//   background: linear-gradient(#060606, #141414);
+//   background-color: transparent;
+//   padding: 0% 2%;
+//   display: flex;
+//   align-items: center;
+//   position: fixed;
+//   z-index: 2;
+//   width: 100%;  
+// }
+
+// nav {
+//   display: flex;
+//   padding: 1.5rem ;
+//   justify-content: center;
   
-}
+// }
 
-.brand {
-  flex: 1;
-}
+// .brand {
+//   flex: 1;
+// }
 
-.brand a {
-  color: red;
-}
+// .brand a {
+//   color: red;
+// }
 
-a {
-  text-decoration: none;
-}
+// a {
+//   text-decoration: none;
+// }
 
-nav ul {
-  margin: unset;
-  list-style-type: none; 
-  justify-content: flex-end;   
-  display: flex; 
-  font-size: 13px;
-}
+// nav ul {
+//   margin: unset;
+//   list-style-type: none; 
+//   justify-content: flex-end;   
+//   display: flex; 
+//   font-size: 13px;
+// }
 
-li + li {
-  margin-left: 20px
-}
+// li + li {
+//   margin-left: 20px
+// }
 
-li a {
-  color: #dcdcdc
-}
+// li a {
+//   color: #dcdcdc
+// }
 
 .hero-section {
   width: 100%;
