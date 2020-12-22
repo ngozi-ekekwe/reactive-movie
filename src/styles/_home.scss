@@ -1,0 +1,96 @@
+.home {
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+  position: relative;
+
+  h1 {
+    font-size: 3rem;
+    color: white;
+  }
+
+  .home__main {
+    position: absolute;
+    transition: background-color 0.8s ease-in;
+    visibility: hidden;
+    z-index: 0;
+
+    &.active {
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #141414;
+      visibility: visible;
+      z-index: 1;
+    }
+  }
+
+  .home__welcome-screen {
+    position: absolute;
+    transition: background-color 0.8s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    z-index: 0;
+    opacity: 0;
+
+    &.active {
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #141414;
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  .profiles {
+    display: flex;
+    margin: 3rem 0 5rem 0;
+    justify-content: space-between;
+    align-items: center;
+
+    .profile {
+      width: 300px;
+      height: 300px;
+      list-style: none;
+      padding: 1rem 0;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.8s ease-in;
+
+      &:hover {
+        border: 1px solid white;
+      }
+
+      p {
+        font-size: 1.3rem;
+        padding: 1rem 0;
+        color: white;
+      }
+    }
+  }
+
+  button {
+    text-transform: uppercase;
+    border: 1px solid grey;
+    background-color: transparent;
+    color: grey;
+    padding: .5em 1.5em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all .5s ease-in;
+    font-size: 1.2rem;
+
+    &:hover {
+      color: white;
+      border: 1px solid white;
+    }
+
+  }
+}

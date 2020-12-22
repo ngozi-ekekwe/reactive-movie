@@ -1,3 +1,13 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import './home';
+
+
 body {
   background-color: #141414;
   margin: 0;
@@ -8,8 +18,9 @@ body {
 }
 
 header {
-  border-bottom: 1px solid #333;
-  background-color: #141414;
+  background-color: #060606;
+  position: fixed;
+  z-index: 2;
   width: 100%;  
 }
 
