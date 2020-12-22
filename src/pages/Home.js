@@ -1,10 +1,13 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import Profile from "../components/Profile";
+import { getLatestMovie } from "../api/Api";
 import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
 
 export default function Home() {
   let welcomeScreen = useRef();
   let mainHomeScreen = useRef();
+
+  const [latestMovie, setLatestMovie] = useState({});
 
   const [profiles, setProfile] = useState([
     {
@@ -26,13 +29,21 @@ export default function Home() {
   ]);
   useEffect(() => {
     welcomeScreen.current.classList.add("active");
-  });
+
+    getLatestMovie().then((response) => {
+      setLatestMovie(response);
+    });
+  }, []);
 
   const profileSelectHandler = (event) => {
     event.preventDefault();
     welcomeScreen.current.classList.remove("active");
     mainHomeScreen.current.classList.add("active");
   };
+
+  console.log(latestMovie);
+
+  const image = `https://image.tmdb.org/t/p/w300_and_h450_bestv3${latestMovie.poster_path}`;
 
   return (
     <Fragment>
@@ -52,14 +63,30 @@ export default function Home() {
           <button>Manage Profiles</button>
         </div>
         <div className="home__main" ref={mainHomeScreen}>
-          <img alt="David Chapell" src=" https://occ-0-3718-1556.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZQM0Grt_JzIGX4xhIH2K4jmVvMrwAaefssB_wmVCKSACs5NPEWP4di4h_udY7K2nkqTlyKcmOD3HSJLE6LMVBEv1jtk.webp?r=191" alt=""/>
+          <div
+            className="hero"
+            style={
+              latestMovie.poster_path && { backgroundImage: `url(${image})` }
+            }
+          >
+            <div className="movie-info">
+              <div className="overlay"></div>
+              <div className="second-layer">
+                <div className="movie-content">
+                  <h2 className="title">{latestMovie.title}</h2>
+                  <p>{latestMovie.overview}</p>
+                  <div className="actions">
+                    <button className="play">Play</button>
+                    <button className="more-info">More Info</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
         </div>
       </div>
     </Fragment>
   );
 }
-
-// https://occ-0-3718-1556.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZQM0Grt_JzIGX4xhIH2K4jmVvMrwAaefssB_wmVCKSACs5NPEWP4di4h_udY7K2nkqTlyKcmOD3HSJLE6LMVBEv1jtk.webp?r=191
-
-
-// https://occ-0-3718-1556.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABZQM0Grt_JzIGX4xhIH2K4jmVvMrwAaefssB_wmVCKSACs5NPEWP4di4h_udY7K2nkqTlyKcmOD3HSJLE6LMVBEv1jtk.webp?r=191
