@@ -34,7 +34,7 @@ function Header(props) {
     <header>
       <div>
         <a href="/browse" className="brand-logo">
-          NETFLIX
+          NETFLIXX
         </a>
       </div>
       <nav>

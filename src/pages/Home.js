@@ -1,6 +1,8 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import Profile from "../components/Profile";
-import { getLatestMovie } from "../api/Api";
+import { getLatestMovie, trending } from "../api/Api";
+import MiniMovieCard from '../components/MiniMovieCard';
+import Section from '../components/Sections';
 import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
 
 export default function Home() {
@@ -8,6 +10,8 @@ export default function Home() {
   let mainHomeScreen = useRef();
 
   const [latestMovie, setLatestMovie] = useState({});
+
+  const [trendingMovies, setTrending] = useState([]);
 
   const [profiles, setProfile] = useState([
     {
@@ -33,6 +37,10 @@ export default function Home() {
     getLatestMovie().then((response) => {
       setLatestMovie(response);
     });
+
+    trending().then((response) => {
+      setTrending(response.results)
+    })
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -41,9 +49,9 @@ export default function Home() {
     mainHomeScreen.current.classList.add("active");
   };
 
-  console.log(latestMovie);
+  console.log(latestMovie, 'trendingMovies');
 
-  const image = `https://image.tmdb.org/t/p/w300_and_h450_bestv3${latestMovie.poster_path}`;
+  const image = `https://image.tmdb.org/t/p/original/${latestMovie.poster_path}`;
 
   return (
     <Fragment>
@@ -84,7 +92,22 @@ export default function Home() {
             </div>
           </div>
 
-          
+          <Section title="Trending Now">
+            { trendingMovies && trendingMovies.map((trendingMovie) => {
+              return (
+                <MiniMovieCard trendingMovie={trendingMovie} />
+              )
+            })}
+          </Section>
+
+          <Section title="New Realeases">
+
+          </Section>
+
+          <Section title="Originals">
+
+          </Section>
+
         </div>
       </div>
     </Fragment>

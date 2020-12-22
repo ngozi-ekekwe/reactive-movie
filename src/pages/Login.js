@@ -23,7 +23,7 @@ function Login({ history }) {
                 placeHolder="Email or phone number"
               />
               <input
-                type="text"
+                type="password"
                 className="text-input"
                 placeHolder="Password"
               />

@@ -12,6 +12,18 @@ export const searchMovieDatabase = (searchQuery) => {
   });
 };
 
+export const trending = () => {
+  const url = `https://api.themoviedb.org/3/trending/all/day?api_key=${TMD_API_KEY}`;
+  return fetch(url, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => {
+    return response.json();
+  });
+}
+
 export const getLatestMovie = () => {
   const url = `https://api.themoviedb.org/3/movie/latest?api_key=${TMD_API_KEY}&language=en-US`;
   return fetch(url, {

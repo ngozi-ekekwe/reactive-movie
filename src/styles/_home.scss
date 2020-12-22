@@ -1,7 +1,6 @@
 .home {
   height: 100vh;
   color: white;
-  overflow: hidden;
   position: relative;
 
   .hero {
@@ -47,14 +46,14 @@
       p {
         padding-top: 1.5rem;
         font-weight: 200;
-        line-height: 1;
+        line-height: 1.5;
         color: white;
         font-size: 1.3rem;
       }
 
       .actions {
         display: flex;
-        margin-top: 2.5rem;
+        margin-top: 2rem;
 
         button {
           background-color: white;
