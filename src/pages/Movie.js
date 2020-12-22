@@ -17,7 +17,7 @@ export default function MovieDetails(props) {
     getSimilarVideos(movieId).then((response) => {
       setSimilarVideos(response.results);
     });
-  }, []);
+  }, [props.location.pathname]);
 
   const details = movieDetails;
   const genres = details && details.genres;

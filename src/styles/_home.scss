@@ -11,7 +11,7 @@
 
   .home__main {
     position: absolute;
-    transition: background-color 0.8s ease-in;
+    transition: all .5s ease-out;
     visibility: hidden;
     z-index: 0;
 
@@ -28,7 +28,7 @@
 
   .home__welcome-screen {
     position: absolute;
-    transition: background-color 0.8s ease-in;
+    transition: background-color .5s ease-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,7 +62,7 @@
       padding: 1rem 0;
       cursor: pointer;
       text-align: center;
-      transition: all 0.8s ease-in;
+      transition: all 0.5s ease-in;
 
       &:hover {
         border: 1px solid white;

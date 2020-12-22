@@ -1,12 +1,10 @@
-export default function Profile({name, avatar, profileSelectHandler}) {
+export default function Profile({ name, avatar, profileSelectHandler }) {
   return (
     <li className="profile" onClick={profileSelectHandler}>
-      <div>
-        <a href="/">
-          {avatar}
-        </a>
-      </div>
+      <a href="/">
+        <div>{avatar}</div>
+      </a>
       <p>{name}</p>
     </li>
-  )
+  );
 }
