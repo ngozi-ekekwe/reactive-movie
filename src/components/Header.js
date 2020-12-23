@@ -48,9 +48,6 @@ function Header(props) {
           <li className="nav-link">
             <Link to="/movies">Movies</Link>
           </li>
-          <li className="nav-link">
-            <Link to="/movies">New & Popular</Link>
-          </li>
         </ul>
         <div className="right-nav">
           <Link to="/login">
