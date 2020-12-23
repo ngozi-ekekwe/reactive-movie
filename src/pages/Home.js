@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import Profile from "../components/Profile";
 import { getLatestMovie, trending } from "../api/Api";
-import MiniMovieCard from '../components/MiniMovieCard';
-import Section from '../components/Sections';
+import MiniMovieCard from "../components/MiniMovieCard";
+import Section from "../components/Sections";
 import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
 
 export default function Home() {
@@ -39,8 +39,8 @@ export default function Home() {
     });
 
     trending().then((response) => {
-      setTrending(response.results)
-    })
+      setTrending(response.results);
+    });
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -49,7 +49,7 @@ export default function Home() {
     mainHomeScreen.current.classList.add("active");
   };
 
-  console.log(latestMovie, 'trendingMovies');
+  console.log(latestMovie, "trendingMovies");
 
   const image = `https://image.tmdb.org/t/p/original/${latestMovie.backdrop_path}`;
 
@@ -93,21 +93,25 @@ export default function Home() {
           </div>
 
           <Section title="Trending Now">
-            { trendingMovies && trendingMovies.map((trendingMovie) => {
-              return (
-                <MiniMovieCard movies={trendingMovie} />
-              )
-            })}
+            {trendingMovies &&
+              trendingMovies.map((trendingMovie) => {
+                return <MiniMovieCard movies={trendingMovie} />;
+              })}
           </Section>
 
           <Section title="New Realeases">
-
+            {trendingMovies &&
+              trendingMovies.map((trendingMovie) => {
+                return <MiniMovieCard movies={trendingMovie} />;
+              })}
           </Section>
 
           <Section title="Originals">
-
+            {trendingMovies &&
+              trendingMovies.map((trendingMovie) => {
+                return <MiniMovieCard movies={trendingMovie} />;
+              })}
           </Section>
-
         </div>
       </div>
     </Fragment>

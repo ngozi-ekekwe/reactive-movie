@@ -1,6 +1,7 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 export default function Hero({ movie }) {
+  console.log(movie, 'moviemovie')
   const moviePath = movie?.backdrop_path || movie?.poster_path;
   const image = moviePath && `https://image.tmdb.org/t/p/original/${moviePath}`;
   return (

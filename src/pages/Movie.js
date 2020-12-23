@@ -25,7 +25,7 @@ export default function MovieDetails(props) {
     <div className="movie-wrapper">
       <Hero movie={movieDetails} />
       {similarVideos && (
-        <Section title="Similar Videos">
+        <Section title="More Like this">
           {similarVideos.map((movie, key) => {
             return <MiniMovieCard movies={movie} key={key} />;
           })}

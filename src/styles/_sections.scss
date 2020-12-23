@@ -1,14 +1,27 @@
 .card-section {
   width: 100%;
   padding: 1.5rem 5%;
-  margin-top: -160px;
+  margin-top: -150px;
   height: 300px;
   z-index: 9;
   position: relative;
-  margin-bottom: 200px;
-
+  margin-bottom: 5rem;
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    padding-bottom: 1rem;
+    font-weight: 600;
     color: white;
+  }
+
+  .row {
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .row__inner {
+    transition: $duration transform;
+    font-size: 0;
+    white-space: nowrap;
+    padding-bottom: 10px; // Account for OS X scroll bar
   }
 }

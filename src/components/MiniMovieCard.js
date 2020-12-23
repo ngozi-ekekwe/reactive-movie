@@ -6,8 +6,8 @@ function MiniMovieCard({ movies }) {
   const image = `https://image.tmdb.org/t/p/original/${src}`;
   return (
     <Link to={url} className="mini-card">
-      <div style={{backgroundImage: `url(${image})`}}>
-        <span>{movies.title}</span>
+      <div className="card-details" style={{backgroundImage: `url(${image})`}}>
+        {/* <span>{movies.title}</span> */}
       </div>
     </Link>
   )

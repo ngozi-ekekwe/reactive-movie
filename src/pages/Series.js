@@ -15,7 +15,7 @@ export default function TVSeries() {
 
   return (
     <div className="movie-wrapper">
-      <Hero />
+      <Hero movie={tvSeries[tvSeries.length -1]} />
       <Section>
         {tvSeries &&
           tvSeries.map((movie, key) => {

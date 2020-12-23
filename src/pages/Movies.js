@@ -13,10 +13,9 @@ export default function Movie() {
       setMovies(response.results);
     });
   }, []);
-
   return (
     <div className="movie-wrapper">
-      <Hero />
+      <Hero movie={movies.length - 1} />
       <Section>
         {movies &&
           movies.map((movie, key) => {
