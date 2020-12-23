@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { discoverMovies } from "../api/Api";
 import Section from "../components/Sections";
 import MiniMovieCard from "../components/MiniMovieCard";
-import Hero from '../components/Hero';
-
+import Hero from "../components/Hero";
 
 export default function Movie() {
   const [movies, setMovies] = useState([]);
@@ -16,12 +15,13 @@ export default function Movie() {
   return (
     <div className="movie-wrapper">
       <Hero movie={movies.length - 1} />
-      <Section>
-        {movies &&
-          movies.map((movie, key) => {
+      {movies && (
+        <Section>
+          {movies.map((movie, key) => {
             return <MiniMovieCard movies={movie} />;
           })}
-      </Section>
+        </Section>
+      )}
     </div>
   );
 }

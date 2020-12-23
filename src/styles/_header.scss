@@ -5,6 +5,7 @@ header {
   position: fixed;
   top: 0;
   background-color: transparent;
+  transition: all .5s ease;
   z-index: 10;
 
   display: flex;

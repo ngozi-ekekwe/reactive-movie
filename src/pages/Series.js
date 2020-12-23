@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import MiniMovieCard from "../components/MiniMovieCard";
 import { getPolpularTVShows } from "../api/Api";
 import Section from "../components/Sections";
-import Hero from '../components/Hero';
+import Hero from "../components/Hero";
 
 export default function TVSeries() {
   const [tvSeries, setTvSeries] = useState([]);
@@ -15,13 +15,14 @@ export default function TVSeries() {
 
   return (
     <div className="movie-wrapper">
-      <Hero movie={tvSeries[tvSeries.length -1]} />
-      <Section>
-        {tvSeries &&
-          tvSeries.map((movie, key) => {
+      <Hero movie={tvSeries[tvSeries.length - 1]} />
+      {tvSeries && (
+        <Section>
+          {tvSeries.map((movie, key) => {
             return <MiniMovieCard movies={movie} key={key} />;
           })}
-      </Section>
+        </Section>
+      )}
     </div>
   );
 }

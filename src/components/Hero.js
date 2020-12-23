@@ -21,7 +21,7 @@ export default function Hero({ movie }) {
                 <p>{movie.overview || <Skeleton duration={2} />}</p>
               </SkeletonTheme>
               <div className="actions">
-                <button className="play">Play</button>
+                <button className="play">Watch Trailer</button>
                 <button className="more-info">More Info</button>
               </div>
             </div>
