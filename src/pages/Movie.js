@@ -21,12 +21,9 @@ export default function MovieDetails(props) {
     });
   }, [props.location.pathname]);
 
-  const details = movieDetails;
-  const genres = details && details.genres;
-  const image = `https://image.tmdb.org/t/p/w300_and_h450_bestv2${details.poster_path}`;
   return (
     <div className="movie-wrapper">
-      <Hero movie={details} />
+      <Hero movie={movieDetails} />
       <Section title="Similar Videos">
         {similarVideos &&
           similarVideos.map((movie, key) => {

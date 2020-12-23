@@ -1,5 +1,6 @@
 export default function Hero({ movie }) {
-  const image = movie && `https://image.tmdb.org/t/p/original/${movie.poster_path}`;
+  console.log(movie.backdrop_path, 'movie')
+  const image = movie && `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`;
   return (
     <div
       className="hero"

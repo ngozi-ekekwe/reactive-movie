@@ -51,7 +51,7 @@ export default function Home() {
 
   console.log(latestMovie, 'trendingMovies');
 
-  const image = `https://image.tmdb.org/t/p/original/${latestMovie.poster_path}`;
+  const image = `https://image.tmdb.org/t/p/original/${latestMovie.backdrop_path}`;
 
   return (
     <Fragment>
