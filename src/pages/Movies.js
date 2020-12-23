@@ -15,7 +15,7 @@ export default function Movie() {
   return (
     <div className="movie-wrapper">
       <Hero movie={movies.length - 1} />
-      {movies && (
+      {movies.length > 0 && (
         <Section>
           {movies.map((movie, key) => {
             return <MiniMovieCard movies={movie} />;

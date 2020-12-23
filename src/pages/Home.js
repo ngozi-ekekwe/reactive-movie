@@ -1,6 +1,13 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import Profile from "../components/Profile";
-import { getLatestMovie, trending } from "../api/Api";
+import {
+  getLatestMovie,
+  trending,
+  getNowPlaying,
+  upcomingMovies,
+  getPolpularTVShows,
+  topRatedMovies,
+} from "../api/Api";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Section from "../components/Sections";
 import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
@@ -12,6 +19,10 @@ export default function Home() {
   const [latestMovie, setLatestMovie] = useState({});
 
   const [trendingMovies, setTrending] = useState([]);
+  const [nowPlaying, setNowPlaying] = useState([]);
+  const [upcomingShows, setUpcomingShows] = useState([]);
+  const [tvSeries, setTvSeries] = useState([]);
+  const [topRated, setTopRated] = useState([]);
 
   const [profiles, setProfile] = useState([
     {
@@ -41,6 +52,23 @@ export default function Home() {
     trending().then((response) => {
       setTrending(response.results);
     });
+
+    getNowPlaying().then((response) => {
+      setNowPlaying(response.results);
+    });
+
+    upcomingMovies().then((response) => {
+      setUpcomingShows(response.results);
+    });
+
+    getPolpularTVShows().then((response) => {
+      setTvSeries(response.results);
+    });
+
+    topRatedMovies().then((response) => {
+      console.log(response);
+      setTopRated(response.results);
+    });
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -48,8 +76,6 @@ export default function Home() {
     welcomeScreen.current.classList.remove("active");
     mainHomeScreen.current.classList.add("active");
   };
-
-  console.log(latestMovie, "trendingMovies");
 
   const image = `https://image.tmdb.org/t/p/original/${latestMovie.backdrop_path}`;
 
@@ -93,22 +119,29 @@ export default function Home() {
           </div>
 
           <Section title="Trending Now">
-            {trendingMovies &&
+            {trendingMovies.length > 0 &&
               trendingMovies.map((trendingMovie) => {
                 return <MiniMovieCard movies={trendingMovie} />;
               })}
           </Section>
 
-          <Section title="New Realeases">
-            {trendingMovies &&
-              trendingMovies.map((trendingMovie) => {
+          <Section title="Top Rated Movies">
+            {topRated &&
+              topRated.map((trendingMovie) => {
                 return <MiniMovieCard movies={trendingMovie} />;
               })}
           </Section>
 
-          <Section title="Originals">
-            {trendingMovies &&
-              trendingMovies.map((trendingMovie) => {
+          <Section title="Popular TV Shows">
+            {tvSeries.length > 0 &&
+              tvSeries.map((trendingMovie) => {
+                return <MiniMovieCard movies={trendingMovie} />;
+              })}
+          </Section>
+
+          <Section title="Now Playing">
+            {nowPlaying &&
+              nowPlaying.map((trendingMovie) => {
                 return <MiniMovieCard movies={trendingMovie} />;
               })}
           </Section>

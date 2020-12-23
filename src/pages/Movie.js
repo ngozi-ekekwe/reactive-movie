@@ -21,10 +21,11 @@ export default function MovieDetails(props) {
     });
   }, [props.location.pathname]);
 
+  console.log(similarVideos, 'similarVideos')
   return (
     <div className="movie-wrapper">
       <Hero movie={movieDetails} />
-      {similarVideos && (
+      {similarVideos.length > 0 && (
         <Section title="More Like this">
           {similarVideos.map((movie, key) => {
             return <MiniMovieCard movies={movie} key={key} />;
