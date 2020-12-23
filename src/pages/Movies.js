@@ -4,6 +4,7 @@ import Section from "../components/Sections";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Hero from '../components/Hero';
 
+
 export default function Movie() {
   const [movies, setMovies] = useState([]);
 

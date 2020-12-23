@@ -1,6 +1,6 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { getMovie, getSimilarVideos } from "../api/Api";
-import Hero from '../components/Hero';
+import Hero from "../components/Hero";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Section from "../components/Sections";
 
@@ -24,12 +24,13 @@ export default function MovieDetails(props) {
   return (
     <div className="movie-wrapper">
       <Hero movie={movieDetails} />
-      <Section title="Similar Videos">
-        {similarVideos &&
-          similarVideos.map((movie, key) => {
+      {similarVideos && (
+        <Section title="Similar Videos">
+          {similarVideos.map((movie, key) => {
             return <MiniMovieCard movies={movie} key={key} />;
           })}
-      </Section>
+        </Section>
+      )}
     </div>
   );
 }
