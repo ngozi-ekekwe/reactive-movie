@@ -3,82 +3,6 @@
   color: white;
   position: relative;
 
-  .hero {
-    height: 90%;
-    background-size: cover;
-    background-position: top center;
-    background-image: url("../img/nicholas-green-nPz8akkUmDI-unsplash.jpg");
-  }
-
-  .movie-info {
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem 5%;
-
-    position: relative;
-
-    .overlay {
-      position: absolute;
-      background-color: black;
-      opacity: 0.4;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 3;
-    }
-
-    .second-layer {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 8;
-      .movie-content {
-        width: 50%;
-      }
-      h2 {
-        font-size: 4rem;
-      }
-
-      p {
-        padding-top: 1.5rem;
-        font-weight: 200;
-        line-height: 1.5;
-        color: white;
-        font-size: 1.3rem;
-      }
-
-      .actions {
-        display: flex;
-        margin-top: 2rem;
-
-        button {
-          background-color: white;
-          text-transform: capitalize;
-          color: black;
-          font-weight: bold;
-          border: none;
-
-          & + button {
-            margin-left: 1.3rem;
-          }
-
-          &:focus {
-            outline: none;
-          }
-
-          &:hover {
-            background-color: black;
-            color: white;
-          }
-        }
-      }
-    }
-  }
-
   h1 {
     font-size: 3rem;
     color: white;
@@ -103,6 +27,8 @@
 
   .home__welcome-screen {
     position: absolute;
+    height: 100vh;
+    overflow: hidden;
     transition: background-color 0.5s ease-out;
     display: flex;
     flex-direction: column;

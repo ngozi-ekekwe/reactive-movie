@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 
-function MiniMovieCard({ trendingMovie }) {
-  const src = trendingMovie.backdrop_path || trendingMovie.poster_path;
+function MiniMovieCard({ movies }) {
+  const src = movies.backdrop_path || movies.poster_path;
+  const url = `/movie/details/${movies.id}`;
   const image = `https://image.tmdb.org/t/p/original/${src}`;
-  console.log(trendingMovie)
+  console.log(movies)
   return (
-    <Link to="" className="mini-card">
+    <Link to={url} className="mini-card">
       <div style={{backgroundImage: `url(${image})`}}>
-        <span>{trendingMovie.title}</span>
+        <span>{movies.title}</span>
       </div>
     </Link>
   )

@@ -95,7 +95,7 @@ export default function Home() {
           <Section title="Trending Now">
             { trendingMovies && trendingMovies.map((trendingMovie) => {
               return (
-                <MiniMovieCard trendingMovie={trendingMovie} />
+                <MiniMovieCard movies={trendingMovie} />
               )
             })}
           </Section>
