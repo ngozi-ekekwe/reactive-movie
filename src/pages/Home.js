@@ -66,7 +66,6 @@ export default function Home() {
     });
 
     topRatedMovies().then((response) => {
-      console.log(response);
       setTopRated(response.results);
     });
   }, []);

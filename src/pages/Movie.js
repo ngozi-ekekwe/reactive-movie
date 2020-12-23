@@ -21,7 +21,6 @@ export default function MovieDetails(props) {
     });
   }, [props.location.pathname]);
 
-  console.log(similarVideos, 'similarVideos')
   return (
     <div className="movie-wrapper">
       <Hero movie={movieDetails} />

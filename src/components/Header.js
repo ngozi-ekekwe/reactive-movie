@@ -29,7 +29,6 @@ function Header(props) {
     const pathName = path[path.length - 1];
     if (pathName.length === 0 || pathName === "login") {
       const children = ulList.current.children;
-      console.log(children);
       for (let i = 0; i < children.length; i++) {
         children[i].style.display = "none";
         children[i].style.transition = "all .5s ease-in";
