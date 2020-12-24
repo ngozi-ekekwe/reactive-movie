@@ -12,6 +12,19 @@ export const searchMovieDatabase = (searchQuery) => {
   });
 };
 
+export const getWatchProviders = (movieId) => {
+  // console.log(movieId)
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${TMD_API_KEY}`;
+  return fetch(url, {
+    method: "get",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => {
+    return response.json();
+  });
+}
+ 
 export const topRatedMovies = () => {
   const url = `https://api.themoviedb.org/3/movie/top_rated?api_key=${TMD_API_KEY}&language=en-US&page=1`;
   return fetch(url, {

@@ -1,0 +1,138 @@
+.modal-shadow {
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  color: white;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ff7676;
+  }
+  &::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  .detail {
+    width: 50%;
+    border-radius: 1rem;
+    min-height: 80vh;
+    background: white;
+    position: absolute;
+    left: 25%;
+    color: black;
+    top: 10%;
+    z-index: 11;
+
+    .movie-image {
+      height: 350px;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      display: flex;
+      padding: 0rem 2rem;
+      font-size: 1.8rem;
+      color: white;
+      font-weight: bold;
+      flex-direction: column;
+      justify-content: center;
+      background-position: center;
+      background-size: cover;
+
+      .number-of-votes {
+        font-size: 1rem;
+      }
+
+      .home-page {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+
+        .rate-button {
+          height: 60px;
+          width: 60px;
+          margin-left: 1rem;
+          border-radius: 50%;
+          cursor: pointer;
+          background-color: rgba(42, 42, 42, 0.6);
+          transition: border 0.1s ease;
+          border-color: rgba(255, 255, 255, 0.5);
+          border: 1px solid rgba(255, 255, 255, 0.7);
+          padding-left: 0.8rem;
+          padding-right: 0.8rem;
+
+          &:hover {
+            border-width: 2px;
+            border-color: white;
+            color: white;
+          }
+        }
+        a {
+          padding: 1em 1.5em;
+          border-radius: 5px;
+          font-size: 1rem;
+          text-decoration: none;
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .movie-details {
+    padding: 1rem 2rem;
+
+    p {
+      color: black;
+      font-size: 1rem;
+      font-weight: 200;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .companies {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .company {
+        // width: calc(100% / 20px);
+        // border: 1px solid red;
+        // display: flex;
+        // flex-direction: column;
+      }
+    }
+
+    .genre {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      span {
+        border: 1px solid white;
+        background-color: #242425;
+        border: 0.1em solid rgb(77, 77, 77);
+        border-radius: 1em;
+        padding: 0.5em 1em;
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: white;
+
+        & + span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+
+  .production-logo {
+    height: 20px;
+    width: 20px;
+  }
+}

@@ -7,6 +7,7 @@ import {
   upcomingMovies,
   getPolpularTVShows,
   topRatedMovies,
+  getWatchProviders
 } from "../api/Api";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Section from "../components/Sections";
@@ -23,6 +24,7 @@ export default function Home() {
   const [upcomingShows, setUpcomingShows] = useState([]);
   const [tvSeries, setTvSeries] = useState([]);
   const [topRated, setTopRated] = useState([]);
+  const [watchProviders, setWatchProviders] = useState([]);
 
   const [profiles, setProfile] = useState([
     {
@@ -68,6 +70,9 @@ export default function Home() {
     topRatedMovies().then((response) => {
       setTopRated(response.results);
     });
+    getWatchProviders(latestMovie.id).then((response) => {
+      setWatchProviders(response.results);
+    });
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -107,7 +112,7 @@ export default function Home() {
               <div className="second-layer">
                 <div className="movie-content">
                   <h2 className="title">{latestMovie.title}</h2>
-                  <p>{latestMovie.overview}</p>
+                  <p>{latestMovie.tagline}</p>
                   <div className="actions">
                     <button className="play">Play</button>
                     <button className="more-info">More Info</button>

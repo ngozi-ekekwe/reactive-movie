@@ -1,26 +1,41 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { useRef, useEffect } from "react";
+import { withRouter } from 'react-router-dom';
+import Modal from "../components/Modal";
+import { useRef, useEffect, useState } from "react";
+import { getWatchProviders } from "../api/Api";
 
-export default function Hero({ movie }) {
+function Hero({ movie, location }) {
+ 
   const moviePath = movie?.backdrop_path || movie?.poster_path;
   const image = moviePath && `https://image.tmdb.org/t/p/original/${moviePath}`;
 
   const movieOverview = useRef(null);
   let divHeight = movieOverview.current && movieOverview.current.offsetHeight;
-  
-  useEffect(()=> {
-    if(divHeight > 179) {
-      movieOverview.current.style.maxHeight = '60px';
-      movieOverview.current.style.height = '60px';
-      movieOverview.current.style.overflow = 'hidden';
+  const [watchProviders, setWatchProviders] = useState({});
+
+  useEffect(() => {
+    const path = location.pathname.split("/");
+    const movieId = Number(path[3]);
+
+    console.log(movieId)
+
+    if (divHeight > 179) {
+      movieOverview.current.style.maxHeight = "60px";
+      movieOverview.current.style.height = "60px";
+      movieOverview.current.style.overflow = "hidden";
     }
-  }, [divHeight])
+    getWatchProviders(movieId).then((response) => {
+      console.log(response.results)
+      setWatchProviders(response.results);
+    });
+  }, []);
 
   return (
     <div
       className="hero"
       style={{ backgroundColor: "black", backgroundImage: `url(${image})` }}
     >
+      <Modal movie={movie} image={image} watchProviders={watchProviders} />
       {movie && (
         <div className="movie-info">
           <div className="overlay"></div>
@@ -30,9 +45,7 @@ export default function Hero({ movie }) {
                 <h2 className="title">
                   {movie.title || <Skeleton height={20} width={300} />}
                 </h2>
-                <p ref={movieOverview}>
-                  {movie.overview || <Skeleton duration={2} />}
-                </p>
+                <p>{movie.tagline || <Skeleton duration={2} />}</p>
               </SkeletonTheme>
               <div className="actions">
                 <button className="play">Watch Trailer</button>
@@ -45,3 +58,5 @@ export default function Hero({ movie }) {
     </div>
   );
 }
+
+export default withRouter(Hero)
