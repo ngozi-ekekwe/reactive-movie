@@ -11,12 +11,37 @@
   transition: $duration all;
   transform-origin: center left;
 
+  .card-text {
+    position: relative;
+    height: 100%;
+
+    .overlay {
+      position: absolute;
+      background-color: black;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .5;
+    }
+
+    h3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color:white;
+      padding: 3rem 1rem;
+      font-size: .8rem;
+    }
+  }
+
   .card-details {
     position: absolute;
     background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
     bottom: 0;
     left: 0;
     right: 0;
@@ -25,78 +50,25 @@
     font-size: 10px;
     opacity: 1;
     transition: $duration opacity;
-
-    span {
-      color:white;
-      text-align: center;
-      font-size: 1.2rem;
-    }
-
-    &:after,
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      display: black;
-    }
-
-    &:after {
-      // margin-top: $iconSize / 2;
-      // margin-left: $iconSize / 2;
-      // width: $iconSize;
-      // height: $iconSize;
-      // border: 3px solid #ecf0f1;
-      // line-height: $iconSize;
-      // text-align: center;
-      // border-radius: 100%;
-      // background: rgba(0, 0, 0, 0.5);
-      // z-index: 1;
-    }
-
-    &:before {
-      // content: "▶";
-      // left: 0;
-      // width: 100%;
-      // font-size: 30px;
-      // margin-left: 7px;
-      // margin-top: -18px;
-      // text-align: center;
-      // z-index: 2;
-    }
-
-    .row__inner:hover {
-      transform: translate3d($moveLeft, 0, 0);
-    }
-
-    .row__inner:hover .tile {
-      opacity: 0.3;
-
-      &:hover {
-        transform: scale($growFactor);
-        opacity: 1;
-      }
-    }
-  }
-
-  .tile:hover ~ .tile {
-    transform: translate3d($moveRight, 0, 0);
-  }
-
-  // > div {
-  //   background-size: cover;
-  //   background-position: center;
-  //   height: 100%;
-  //   width: 100%;
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  //   padding: 0 1rem;
-
-  //   span {
-  //     color: white;
-  //     font-weight: bold;
-  //     text-align: center;
-  //   }
-  // }
+  } 
 }
+
+.row__inner:hover {
+  transform: translate3d($moveLeft, 0, 0);
+}
+
+.row__inner:hover .mini-card {
+  opacity: .3;
+
+  &:hover {
+    transform: scale($growFactor);
+    opacity: 1
+  }
+}
+
+.mini-card:hover ~ .mini-card {
+  transform: translate3d($moveRight, 0, 0);
+}
+
+
+
