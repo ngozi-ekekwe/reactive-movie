@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MiniMovieCard from "../components/MiniMovieCard";
-import { getPolpularTVShows } from "../api/Api";
-import Section from "../components/Sections";
-import Hero from "../components/Hero";
+import MiniMovieCard from "components/MiniMovieCard";
+import { getPolpularTVShows } from "api/Api";
+import Section from "components/Sections";
+import Hero from "components/Hero";
 
 export default function TVSeries() {
   const [tvSeries, setTvSeries] = useState([]);

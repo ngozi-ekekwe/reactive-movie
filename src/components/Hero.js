@@ -1,8 +1,8 @@
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { withRouter } from 'react-router-dom';
-import Modal from "../components/Modal";
+import Modal from "components/Modal";
 import { useRef, useEffect, useState } from "react";
-import { getWatchProviders } from "../api/Api";
+import { getWatchProviders } from "api/Api";
 
 function Hero({ movie, location }) {
  

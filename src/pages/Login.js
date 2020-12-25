@@ -1,7 +1,6 @@
 import { withRouter } from 'react-router-dom';
 
 function Login({ history }) {
-
   const loginHandler = (event) => {
     event.preventDefault();
     history.push("/browse");

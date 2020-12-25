@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import thumbsdown from "../img/thumbsdown.svg";
-import thumbsup from "../img/thumbsup.svg";
+import thumbsdown from "img/thumbsdown.svg";
+import thumbsup from "img/thumbsup.svg";
 
 export default function Modal({ movie, image, watchProviders }) {
   return (

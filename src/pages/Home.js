@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
-import Profile from "../components/Profile";
+import Profile from "components/Profile";
 import {
   getLatestMovie,
   trending,
