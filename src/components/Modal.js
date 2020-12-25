@@ -1,19 +1,8 @@
 import { Link } from "react-router-dom";
 import thumbsdown from "../img/thumbsdown.svg";
 import thumbsup from "../img/thumbsup.svg";
-import { getWatchProviders } from "../api/Api";
-import { useState, useEffect } from "react";
 
 export default function Modal({ movie, image, watchProviders }) {
-  // const [watchProviders, setWatchProviders] = useState([]);
-
-  // useEffect(() => {
-  //   getWatchProviders(movie.id).then((response) => {
-  //     setWatchProviders(response.results);
-  //   });
-  // }, []);
-
-  // console.log(watchProviders)
   return (
     <div className="modal-shadow">
       <div className="detail">

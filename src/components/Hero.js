@@ -17,15 +17,13 @@ function Hero({ movie, location }) {
     const path = location.pathname.split("/");
     const movieId = Number(path[3]);
 
-    console.log(movieId)
 
     if (divHeight > 179) {
       movieOverview.current.style.maxHeight = "60px";
       movieOverview.current.style.height = "60px";
       movieOverview.current.style.overflow = "hidden";
     }
-    getWatchProviders(movieId).then((response) => {
-      console.log(response.results)
+    movieId && getWatchProviders(movieId).then((response) => {
       setWatchProviders(response.results);
     });
   }, []);
@@ -35,7 +33,7 @@ function Hero({ movie, location }) {
       className="hero"
       style={{ backgroundColor: "black", backgroundImage: `url(${image})` }}
     >
-      <Modal movie={movie} image={image} watchProviders={watchProviders} />
+      {/* <Modal movie={movie} image={image} watchProviders={watchProviders} /> */}
       {movie && (
         <div className="movie-info">
           <div className="overlay"></div>

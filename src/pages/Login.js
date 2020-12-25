@@ -20,12 +20,12 @@ function Login({ history }) {
               <input
                 type="text"
                 className="text-input"
-                placeHolder="Email or phone number"
+                placeholder="Email or phone number"
               />
               <input
                 type="password"
                 className="text-input"
-                placeHolder="Password"
+                placeholder="Password"
               />
               <button onClick={loginHandler}>Sign In</button>
               <div className="form-footer">

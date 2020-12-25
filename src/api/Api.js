@@ -13,7 +13,6 @@ export const searchMovieDatabase = (searchQuery) => {
 };
 
 export const getWatchProviders = (movieId) => {
-  // console.log(movieId)
   const url = `https://api.themoviedb.org/3/movie/${movieId}/watch/providers?api_key=${TMD_API_KEY}`;
   return fetch(url, {
     method: "get",

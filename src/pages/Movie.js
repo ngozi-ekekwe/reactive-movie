@@ -22,7 +22,6 @@ export default function MovieDetails(props) {
     });
 
     getWatchProviders(movieId).then((response) => {
-      console.log(response.results)
       setWatchProviders(response.results);
     });
   }, [props.location.pathname]);

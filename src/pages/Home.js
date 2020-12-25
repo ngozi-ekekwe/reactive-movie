@@ -7,9 +7,10 @@ import {
   upcomingMovies,
   getPolpularTVShows,
   topRatedMovies,
-  getWatchProviders
+  getWatchProviders,
 } from "../api/Api";
 import MiniMovieCard from "../components/MiniMovieCard";
+import Hero from "../components/Hero";
 import Section from "../components/Sections";
 import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
 
@@ -24,7 +25,7 @@ export default function Home() {
   const [upcomingShows, setUpcomingShows] = useState([]);
   const [tvSeries, setTvSeries] = useState([]);
   const [topRated, setTopRated] = useState([]);
-  const [watchProviders, setWatchProviders] = useState([]);
+  const [watchProviders, setWatchProviders] = useState({});
 
   const [profiles, setProfile] = useState([
     {
@@ -49,6 +50,11 @@ export default function Home() {
 
     getLatestMovie().then((response) => {
       setLatestMovie(response);
+
+      getWatchProviders(response.id).then((response) => {
+        console.log(response)
+        setWatchProviders(response.results);
+      });
     });
 
     trending().then((response) => {
@@ -70,9 +76,8 @@ export default function Home() {
     topRatedMovies().then((response) => {
       setTopRated(response.results);
     });
-    getWatchProviders(latestMovie.id).then((response) => {
-      setWatchProviders(response.results);
-    });
+
+    
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -90,8 +95,9 @@ export default function Home() {
           <h1>Who's watching?</h1>
           <ul className="profiles">
             {profiles &&
-              profiles.map((profile) => (
+              profiles.map((profile, i) => (
                 <Profile
+                  key={i}
                   name={profile.name}
                   avatar={profile.avatar}
                   profileSelectHandler={profileSelectHandler}
@@ -100,53 +106,34 @@ export default function Home() {
           </ul>
           <button>Manage Profiles</button>
         </div>
+        
         <div className="home__main" ref={mainHomeScreen}>
-          <div
-            className="hero"
-            style={
-              latestMovie.poster_path && { backgroundImage: `url(${image})` }
-            }
-          >
-            <div className="movie-info">
-              <div className="overlay"></div>
-              <div className="second-layer">
-                <div className="movie-content">
-                  <h2 className="title">{latestMovie.title}</h2>
-                  <p>{latestMovie.tagline}</p>
-                  <div className="actions">
-                    <button className="play">Play</button>
-                    <button className="more-info">More Info</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <Hero movie={latestMovie} watchProviders={watchProviders} />
           <Section title="Trending Now">
             {trendingMovies.length > 0 &&
-              trendingMovies.map((trendingMovie) => {
-                return <MiniMovieCard movies={trendingMovie} />;
+              trendingMovies.map((trendingMovie, i) => {
+                return <MiniMovieCard movies={trendingMovie} key={i} />;
               })}
           </Section>
 
           <Section title="Top Rated Movies">
             {topRated &&
-              topRated.map((trendingMovie) => {
-                return <MiniMovieCard movies={trendingMovie} />;
+              topRated.map((topRated, i) => {
+                return <MiniMovieCard movies={topRated} key={i} />;
               })}
           </Section>
 
           <Section title="Popular TV Shows">
             {tvSeries.length > 0 &&
-              tvSeries.map((trendingMovie) => {
-                return <MiniMovieCard movies={trendingMovie} />;
+              tvSeries.map((series, i) => {
+                return <MiniMovieCard movies={series} key={i} />;
               })}
           </Section>
 
           <Section title="Now Playing">
             {nowPlaying &&
-              nowPlaying.map((trendingMovie) => {
-                return <MiniMovieCard movies={trendingMovie} />;
+              nowPlaying.map((nowP, i) => {
+                return <MiniMovieCard movies={nowP} key={i} />;
               })}
           </Section>
         </div>

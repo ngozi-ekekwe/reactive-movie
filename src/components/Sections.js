@@ -7,9 +7,6 @@ export default function Section({ title, children }) {
         {children}
         </div>
       </div>
-      {/* <div className="card-row" style={{display: 'flex', flexWrap: 'wrap'}}>
-        
-      </div> */}
     </section>
   );
 }
