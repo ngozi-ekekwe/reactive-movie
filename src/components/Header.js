@@ -51,7 +51,7 @@ function Header(props) {
     <header ref={headerBar}>
       <div>
         <a href="/browse" className="brand-logo">
-          NETFLIXX
+          N&C
         </a>
       </div>
       <nav>

@@ -2,6 +2,7 @@
   width: 100%;
   padding: 1.5rem 5%;
   margin-top: -150px;
+  overflow: scroll;
   height: 300px;
   z-index: 9;
   position: relative;
@@ -15,7 +16,7 @@
 
   .row {
     width: 100%;
-    overflow: scroll;
+    
   }
 
   .row__inner {

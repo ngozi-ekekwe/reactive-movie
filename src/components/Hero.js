@@ -33,7 +33,7 @@ function Hero({ movie, location }) {
       className="hero"
       style={{ backgroundColor: "black", backgroundImage: `url(${image})` }}
     >
-      {/* <Modal movie={movie} image={image} watchProviders={watchProviders} /> */}
+      <Modal movie={movie} image={image} watchProviders={watchProviders} />
       {movie && (
         <div className="movie-info">
           <div className="overlay"></div>

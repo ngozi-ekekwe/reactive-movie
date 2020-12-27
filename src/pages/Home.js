@@ -52,7 +52,6 @@ export default function Home() {
       setLatestMovie(response);
 
       getWatchProviders(response.id).then((response) => {
-        console.log(response)
         setWatchProviders(response.results);
       });
     });
