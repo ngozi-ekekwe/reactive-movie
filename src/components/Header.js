@@ -26,16 +26,24 @@ function Header(props) {
     document.addEventListener("scroll", trackScrolling);
     const path = props.location.pathname.split("/");
     const pathName = path[path.length - 1];
-    if (pathName.length === 0 || pathName === "login") {
+    console.log(pathName.length, pathName)
+    if (pathName === "login") {
+      const children = ulList.current.children;
+      signInButton.current.style.display = "none";
+      for (let i = 0; i < children.length; i++) {
+        children[i].style.display = "none";
+        children[i].style.transition = "all .5s ease-in";
+      }
+    } 
+    if (pathName.length === 0) {
+      signInButton.current.style.display = "flex";
       const children = ulList.current.children;
       for (let i = 0; i < children.length; i++) {
         children[i].style.display = "none";
         children[i].style.transition = "all .5s ease-in";
       }
     }
-    if (pathName === "login") {
-      signInButton.current.style.display = "none";
-    } else if (pathName.length != 0 && pathName != "login") {
+    else if (pathName.length != 0 && pathName != "login") {
       signInButton.current.style.display = "none";
       const children = ulList.current.children;
       for (let i = 0; i < children.length; i++) {
@@ -48,7 +56,7 @@ function Header(props) {
 
   return (
     <header ref={headerBar}>
-      <div>
+      <div className="brand-logo">
         <Link to="/"> Notflixx</Link>
       </div>
       <nav>
