@@ -75,8 +75,6 @@ export default function Home() {
     topRatedMovies().then((response) => {
       setTopRated(response.results);
     });
-
-    
   }, []);
 
   const profileSelectHandler = (event) => {
@@ -105,9 +103,9 @@ export default function Home() {
           </ul>
           <button>Manage Profiles</button>
         </div>
-        
+
         <div className="home__main" ref={mainHomeScreen}>
-        <Hero movie={latestMovie} watchProviders={watchProviders} />
+          <Hero movie={latestMovie} watchProviders={watchProviders} />
           <Section title="Trending Now">
             {trendingMovies.length > 0 &&
               trendingMovies.map((trendingMovie, i) => {

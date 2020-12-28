@@ -1,0 +1,84 @@
+.landing {
+  .landing-hero {
+    height: 100vh;
+    border-bottom: 7px solid grey;
+    background-image: url("../img/felipe-bustillo-4VDRCoNuvE0-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .overlay {
+      position: absolute;
+      background-color: black;
+      opacity: 0.7;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 8;
+
+      h1, h2, h3 {
+        color: white;
+      }
+
+      h1 {
+        font-size: 4rem; 
+      }
+      h2 {
+        font-size: 2rem;
+        font-weight: 100;
+        padding: 1rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 100;
+      }
+
+      .landing-input {
+        margin: 1.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        color: #8c8c8c;
+        width: 100%;
+
+        button {
+          border: none;
+          padding: 1.5rem 2rem;
+          font-size: 1.1rem;
+          cursor: pointer;
+          background-color: red;
+          font-weight: bold;
+          color: white;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        input {
+          padding: 1.6rem 2rem;
+          width: 35%;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+
+    }
+  }
+}

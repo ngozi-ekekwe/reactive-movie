@@ -51,7 +51,7 @@ function Header(props) {
     <header ref={headerBar}>
       <div>
         <a href="/browse" className="brand-logo">
-          N&C
+          Notflixx
         </a>
       </div>
       <nav>

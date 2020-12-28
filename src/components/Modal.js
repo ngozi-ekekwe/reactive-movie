@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import thumbsdown from "img/thumbsdown.svg";
-import thumbsup from "img/thumbsup.svg";
 import WatchProvidersComponent from "../components/WatchProviders";
 
-export default function Modal({ movie, image, watchProviders }) {
+export default function Modal({ movie, image, watchProviders, isModalOpen, toggleModal }) {
   const provider = watchProviders.US ? watchProviders.US : null;
-  console.log(movie)
   return (
-    <div className="modal-shadow">
+    <div className={`modal-shadow ${isModalOpen ? 'active' : ''}`} onClick={toggleModal}>
       <div className="detail">
         <div
           className="movie-image"
@@ -19,12 +16,6 @@ export default function Modal({ movie, image, watchProviders }) {
           </div>
           <div className="home-page">
             <a href={movie.homepage ? movie.homepage : " "}>Vist Homepage</a>
-            {/* <button className="rate-button">
-              <img src={thumbsdown} alt="" />
-            </button>
-            <button className="rate-button">
-              <img src={thumbsup} alt="" />
-            </button> */}
           </div>
         </div>
         <div className="movie-details">
@@ -41,9 +32,9 @@ export default function Modal({ movie, image, watchProviders }) {
           <p>status: {movie?.status}</p>
           <div>Spoken Languages</div>
           { 
-            movie.spoken_languages && movie.spoken_languages.map((sl) => {
+            movie.spoken_languages && movie.spoken_languages.map((sl, key) => {
               return (
-                <p>{sl.english_name}</p>
+                <p key={key}>{sl.english_name}</p>
               )
             })
           }
