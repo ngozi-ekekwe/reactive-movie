@@ -9,17 +9,16 @@ function Header(props) {
 
   const trackScrolling = () => {
     const heroSection = document.querySelector(".hero");
-    const boundingSection =
-    heroSection && heroSection.getBoundingClientRect();
+    const boundingSection = heroSection && heroSection.getBoundingClientRect();
 
     if (
       boundingSection.top >= 0 &&
       boundingSection.bottom <=
         (window.innerHeight || document.documentElement.clientHeight)
     ) {
-      headerBar.current.style.background = 'transparent'
+      headerBar.current.style.background = "transparent";
     } else {
-      headerBar.current.style.background = 'black'
+      headerBar.current.style.background = "black";
     }
   };
 
@@ -50,9 +49,7 @@ function Header(props) {
   return (
     <header ref={headerBar}>
       <div>
-        <a href="/browse" className="brand-logo">
-          Notflixx
-        </a>
+        <Link to="/"> Notflixx</Link>
       </div>
       <nav>
         <ul ref={ulList}>
