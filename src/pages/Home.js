@@ -7,7 +7,7 @@ import {
   getPolpularTVShows,
   topRatedMovies,
 } from "../api/Api";
-import { filterAdultContent } from '../utils/filterMovies';
+import { filterAdultContent } from "../utils/filterMovies";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Hero from "../components/Hero";
 import Section from "../components/Sections";
@@ -45,27 +45,26 @@ export default function Home() {
     welcomeScreen.current.classList.add("active");
 
     trending().then((response) => {
-      let trendings = filterAdultContent(response.results)
+      let trendings = filterAdultContent(response.results);
       setTrending(trendings);
     });
 
     getNowPlaying().then((response) => {
-      let filteredContent = filterAdultContent(response.results)
+      let filteredContent = filterAdultContent(response.results);
       setNowPlaying(filteredContent);
     });
 
     upcomingMovies().then((response) => {
-      let filteredContent = filterAdultContent(response.results)
+      let filteredContent = filterAdultContent(response.results);
       setUpcomingShows(filteredContent);
     });
 
     getPolpularTVShows().then((response) => {
-      let filteredContent = filterAdultContent(response.results)
-      setTvSeries(filteredContent);
+      setTvSeries(response.results);
     });
 
     topRatedMovies().then((response) => {
-      let filteredContent = filterAdultContent(response.results)
+      let filteredContent = filterAdultContent(response.results);
       setTopRated(filteredContent);
     });
   }, []);
