@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { discoverMovies } from "api/Api";
 import Section from "components/Sections";
 import MiniMovieCard from "components/MiniMovieCard";
+import { filterAdultContent } from '../utils/filterMovies';
 import Hero from "components/Hero";
 
 export default function Movie() {
@@ -9,7 +10,8 @@ export default function Movie() {
 
   useEffect(() => {
     discoverMovies().then((response) => {
-      setMovies(response.results);
+      let filteredContent = filterAdultContent(response.results);
+      setMovies(filteredContent);
     });
   }, []);
   return (

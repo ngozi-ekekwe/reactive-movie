@@ -1,14 +1,13 @@
 import React, { useState, useEffect, Fragment, useRef } from "react";
 import Profile from "components/Profile";
 import {
-  getLatestMovie,
   trending,
   getNowPlaying,
   upcomingMovies,
   getPolpularTVShows,
   topRatedMovies,
-  getWatchProviders,
 } from "../api/Api";
+import { filterAdultContent } from '../utils/filterMovies';
 import MiniMovieCard from "../components/MiniMovieCard";
 import Hero from "../components/Hero";
 import Section from "../components/Sections";
@@ -18,14 +17,11 @@ export default function Home() {
   let welcomeScreen = useRef();
   let mainHomeScreen = useRef();
 
-  const [latestMovie, setLatestMovie] = useState({});
-
   const [trendingMovies, setTrending] = useState([]);
   const [nowPlaying, setNowPlaying] = useState([]);
   const [upcomingShows, setUpcomingShows] = useState([]);
   const [tvSeries, setTvSeries] = useState([]);
   const [topRated, setTopRated] = useState([]);
-  const [watchProviders, setWatchProviders] = useState({});
 
   const [profiles, setProfile] = useState([
     {
@@ -48,32 +44,29 @@ export default function Home() {
   useEffect(() => {
     welcomeScreen.current.classList.add("active");
 
-    getLatestMovie().then((response) => {
-      setLatestMovie(response);
-
-      getWatchProviders(response.id).then((response) => {
-        setWatchProviders(response.results);
-      });
-    });
-
     trending().then((response) => {
-      setTrending(response.results);
+      let trendings = filterAdultContent(response.results)
+      setTrending(trendings);
     });
 
     getNowPlaying().then((response) => {
-      setNowPlaying(response.results);
+      let filteredContent = filterAdultContent(response.results)
+      setNowPlaying(filteredContent);
     });
 
     upcomingMovies().then((response) => {
-      setUpcomingShows(response.results);
+      let filteredContent = filterAdultContent(response.results)
+      setUpcomingShows(filteredContent);
     });
 
     getPolpularTVShows().then((response) => {
-      setTvSeries(response.results);
+      let filteredContent = filterAdultContent(response.results)
+      setTvSeries(filteredContent);
     });
 
     topRatedMovies().then((response) => {
-      setTopRated(response.results);
+      let filteredContent = filterAdultContent(response.results)
+      setTopRated(filteredContent);
     });
   }, []);
 
@@ -82,8 +75,6 @@ export default function Home() {
     welcomeScreen.current.classList.remove("active");
     mainHomeScreen.current.classList.add("active");
   };
-
-  const image = `https://image.tmdb.org/t/p/original/${latestMovie.backdrop_path}`;
 
   return (
     <Fragment>
@@ -105,7 +96,7 @@ export default function Home() {
         </div>
 
         <div className="home__main" ref={mainHomeScreen}>
-          <Hero movie={latestMovie} watchProviders={watchProviders} />
+          <Hero movie={upcomingShows[0]} />
           <Section title="Trending Now">
             {trendingMovies.length > 0 &&
               trendingMovies.map((trendingMovie, i) => {

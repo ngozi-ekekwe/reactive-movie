@@ -26,7 +26,6 @@ function Header(props) {
     document.addEventListener("scroll", trackScrolling);
     const path = props.location.pathname.split("/");
     const pathName = path[path.length - 1];
-    console.log(pathName.length, pathName)
     if (pathName === "login") {
       const children = ulList.current.children;
       signInButton.current.style.display = "none";

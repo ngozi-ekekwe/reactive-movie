@@ -39,14 +39,14 @@ export default function Modal({ movie, image, watchProviders, isModalOpen, toggl
             })
           }
 
-          <div>
+         { provider && <div>
             <h3>Watch Providers in the US</h3>
             {provider && 
               <WatchProvidersComponent
                 providers={provider}
               ></WatchProvidersComponent>
             }
-          </div>
+          </div>}
         </div>
       </div>
     </div>
