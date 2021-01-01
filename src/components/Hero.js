@@ -68,7 +68,7 @@ function Hero({ movie, location }) {
                 </button>
                 <button className="more-info" onClick={toggleModal}>
                 <FontAwesomeIcon icon={faChevronCircleDown} size="1x" />
-                  Info
+                  More
                 </button>
               </div>
             </div>
