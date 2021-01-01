@@ -55,7 +55,7 @@ function Header(props) {
   return (
     <header ref={headerBar}>
       <div className="brand-logo">
-        <Link to="/">React TV</Link>
+        <Link to="/">R.TV</Link>
       </div>
       <nav>
         <ul ref={ulList}>

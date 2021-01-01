@@ -34,7 +34,11 @@
       margin-right: 1rem;
     }
     .movie-content {
-      width: 40%;
+      width: 90%;
+
+      @media screen and (min-width: $medium) {
+        width: 40%;
+      }
     }
     h2 {
       font-size: 3rem;
@@ -59,12 +63,17 @@
         color: black;
         font-weight: bold;
         border: none;
-        padding: 1em 1.5em;
+        padding: 1em;
         letter-spacing: 2px;
         cursor: pointer;
         transition: all 0.5s ease-in;
         border-radius: 4px;
-        font-size: 1.2rem;
+        font-size: .8rem;
+
+        @media screen and (min-width: $medium) {
+          padding: 1em 1.5em;
+          font-size: 1.2rem;
+        }
 
         & + button {
           margin-left: 1.3rem;

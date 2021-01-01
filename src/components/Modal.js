@@ -1,11 +1,19 @@
-import { Link } from "react-router-dom";
 import WatchProvidersComponent from "../components/WatchProviders";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWindowClose
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function Modal({ movie, image, watchProviders, isModalOpen, toggleModal }) {
   const provider = watchProviders.US ? watchProviders.US : null;
   return (
     <div className={`modal-shadow ${isModalOpen ? 'active' : ''}`} onClick={toggleModal}>
       <div className="detail">
+        <div className="close">
+          <button>
+          <FontAwesomeIcon icon={faWindowClose} />
+          </button>
+        </div>
         <div
           className="movie-image"
           style={{ backgroundColor: "black", backgroundImage: `url(${image})` }}

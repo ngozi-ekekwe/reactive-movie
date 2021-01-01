@@ -34,6 +34,13 @@ function Hero({ movie, location }) {
   }, []);
 
   const toggleModal = () => {
+    document.body.style.overflow = "hidden";
+    if(isModalOpen) {
+      document.body.style.overflow = "hidden";
+    }
+    else {
+      document.body.style.overflow = "auto";
+    }
     setIsModalOpen(!isModalOpen);
   };
   return (
