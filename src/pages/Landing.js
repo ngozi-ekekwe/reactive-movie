@@ -1,6 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-export default function Landing() {
+function Landing({ history }) {
+
+  const loginHandler = (event) => {
+    event.preventDefault();
+    history.push("/browse");
+  }
   return (
     <div className="landing">
       <div className="landing-hero">
@@ -10,10 +16,12 @@ export default function Landing() {
             <h2>Watch anywhere. Cancel anytime.</h2>
             <div className="landing-input">
               <input type="text" placeholder="Email address"/>
-              <button>Get Started</button>
+              <button onClick={loginHandler}>Get Started</button>
             </div>
           </div>
         </div>
     </div>
   )
 }
+
+export default withRouter(Landing)

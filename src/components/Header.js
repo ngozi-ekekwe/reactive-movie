@@ -8,11 +8,11 @@ function Header(props) {
   const headerBar = useRef(null);
 
   const trackScrolling = () => {
-    const heroSection = document.querySelector(".hero");
+    const heroSection = document.querySelector(".hero")
     const boundingSection = heroSection && heroSection.getBoundingClientRect();
 
     if (
-      boundingSection.top >= 0 &&
+      boundingSection && boundingSection.top >= 0 &&
       boundingSection.bottom <=
         (window.innerHeight || document.documentElement.clientHeight)
     ) {

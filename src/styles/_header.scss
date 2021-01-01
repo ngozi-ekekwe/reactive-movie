@@ -4,9 +4,13 @@ header {
   margin: auto;
   position: fixed;
   top: 0;
-  background-color: transparent;
+  background-color: black;
   transition: all .5s ease;
-  z-index: 10;
+  z-index: 15;
+
+  @media screen and (min-width: $medium) {
+    background-color: transparent;
+  }
 
   display: flex;
   align-items: center;
