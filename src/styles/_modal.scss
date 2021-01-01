@@ -22,12 +22,14 @@
 
     button {
       border: none;
+      background-color: black;
       cursor: pointer;
 
     }
 
     button svg {
       color: white;
+      background: transparent;
       font-size: 1.5rem;
     }
   }
