@@ -38,7 +38,7 @@ function Hero({ movie, location }) {
       document.body.style.overflow = "hidden";
     }
     else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "scroll";
     }
     setIsModalOpen(!isModalOpen);
   };

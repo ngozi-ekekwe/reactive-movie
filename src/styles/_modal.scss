@@ -139,6 +139,7 @@
 
     .genre {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 1rem;
 
@@ -146,15 +147,13 @@
         border: 1px solid white;
         background-color: #242425;
         border: 0.1em solid rgb(77, 77, 77);
+        margin-bottom: 1rem;
         border-radius: 1em;
         padding: 0.5em 1em;
         font-size: 0.8rem;
         font-weight: 300;
         color: white;
-
-        & + span {
-          margin-left: 1rem;
-        }
+        margin-right: 1.5rem;
       }
     }
   }
