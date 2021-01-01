@@ -64,11 +64,11 @@ function Hero({ movie, location }) {
               <div className="actions">
                 <button className="play">
                   <FontAwesomeIcon icon={faPlay} size="1x" />
-                  Watch Trailer
+                  Trailer
                 </button>
                 <button className="more-info" onClick={toggleModal}>
                 <FontAwesomeIcon icon={faChevronCircleDown} size="1x" />
-                  More Info
+                  Info
                 </button>
               </div>
             </div>
