@@ -33,7 +33,7 @@ function Header(props) {
         children[i].style.display = "none";
         children[i].style.transition = "all .5s ease-in";
       }
-    } 
+    }
     if (pathName.length === 0) {
       signInButton.current.style.display = "flex";
       const children = ulList.current.children;
@@ -41,8 +41,7 @@ function Header(props) {
         children[i].style.display = "none";
         children[i].style.transition = "all .5s ease-in";
       }
-    }
-    else if (pathName.length != 0 && pathName != "login") {
+    } else if (pathName.length != 0 && pathName != "login") {
       signInButton.current.style.display = "none";
       const children = ulList.current.children;
       for (let i = 0; i < children.length; i++) {
@@ -56,7 +55,7 @@ function Header(props) {
   return (
     <header ref={headerBar}>
       <div className="brand-logo">
-        <Link to="/"> Notflixx</Link>
+        <Link to="/">React TV</Link>
       </div>
       <nav>
         <ul ref={ulList}>

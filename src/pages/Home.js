@@ -11,7 +11,7 @@ import { filterAdultContent } from "../utils/filterMovies";
 import MiniMovieCard from "../components/MiniMovieCard";
 import Hero from "../components/Hero";
 import Section from "../components/Sections";
-import { Planet, Cat, Ghost, IceCream } from "react-kawaii";
+import avatarProfiles from 'utils/profiles';
 
 export default function Home() {
   let welcomeScreen = useRef();
@@ -23,24 +23,8 @@ export default function Home() {
   const [tvSeries, setTvSeries] = useState([]);
   const [topRated, setTopRated] = useState([]);
 
-  const [profiles, setProfile] = useState([
-    {
-      name: "Ghost E",
-      avatar: <Ghost size={200} mood="blissful" color="#E0E4E8" />,
-    },
-    {
-      name: "Planet A",
-      avatar: <Planet size={200} mood="blissful" color="#FDA7DC" />,
-    },
-    {
-      name: "Cat Snow",
-      avatar: <Cat size={200} mood="blissful" color="#61DDBC" />,
-    },
-    {
-      name: "IceCream Snow",
-      avatar: <IceCream size={200} mood="blissful" color="#61DDBC" />,
-    },
-  ]);
+  const [ profiles, setProfile ] = useState(avatarProfiles);
+  
   useEffect(() => {
     welcomeScreen.current.classList.add("active");
 

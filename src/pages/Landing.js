@@ -8,7 +8,6 @@ export default function Landing() {
           <div className="content">
             <h1>Movies & TV shows listing.</h1>
             <h2>Watch anywhere. Cancel anytime.</h2>
-            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
             <div className="landing-input">
               <input type="text" placeholder="Email address"/>
               <button>Get Started</button>

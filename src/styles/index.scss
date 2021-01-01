@@ -3,7 +3,9 @@ $duration: 450ms;
 $tileWidth: 250px;
 $tileHeight : ($tileWidth / (16/9));
 $iconSize : 50px;
-$growFactor : 1.5;// 1.5 times the original size
+$growFactor : 1.5;// 1.5 times the original size;
+$small: 300px;
+$medium: 900px;
 
 $moveLeft : -($tileWidth * ($growFactor - 1) / 2);
 $moveRight : $tileWidth * ($growFactor - 1);
