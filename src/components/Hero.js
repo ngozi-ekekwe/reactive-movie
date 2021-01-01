@@ -34,7 +34,6 @@ function Hero({ movie, location }) {
   }, []);
 
   const toggleModal = () => {
-    document.body.style.overflow = "hidden";
     if(isModalOpen) {
       document.body.style.overflow = "hidden";
     }
