@@ -2,6 +2,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c72a25e0-4827-494a-90af-583785946741/deploy-status)](https://app.netlify.com/sites/reactive-movie/deploys)
 
 
+*** APPLICATION DOES NOT REQUIRE LOGIN / Signup INFORMATION. You can enter dummy email and password ***
+
+
 ![yooo](https://user-images.githubusercontent.com/11598255/103247981-19e89a00-4969-11eb-8c82-6da9ec85651f.gif)
 
 
